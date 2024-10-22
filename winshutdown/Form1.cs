@@ -14,11 +14,10 @@ namespace winshutdown
 
         }
 
-        int time;
-
+        int time = 11;
         private void button1_Click(object sender, EventArgs e)
         {
-            Process.Start("shutdown", "/s /t time");
+            Process.Start("shutdown", $"/s /t {time}");
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -39,12 +38,13 @@ namespace winshutdown
         {
 
         }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
+        }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
-
-        
     }
 }
