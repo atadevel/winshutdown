@@ -13,11 +13,9 @@ namespace winshutdown
         {
 
         }
-
-        int time = 11;
         private void button1_Click(object sender, EventArgs e)
         {
-            Process.Start("shutdown", $"/s /t {time}");
+            Process.Start("shutdown", $"/s /t {txthour}");
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -38,11 +36,33 @@ namespace winshutdown
         {
 
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
+
+        private void txthour_Leave(object sender, EventArgs e)
+        {
+            string hour = txthour.Text;
+            Convert.ToInt32(hour);
+            MessageBox.Show(hour);
+        }
+        private void txtmin_Leave(object sender, EventArgs e)
+        {
+            
+              
+            
+            
+                string min = txtmin.Text;
+                Convert.ToInt32(min);
+                MessageBox.Show(min);
+
+            
+            
+        }
+
+        private void txthour_TextChanged(object sender, EventArgs e)
         {
 
         }
-        private void textBox2_TextChanged(object sender, EventArgs e)
+
+        private void txtmin_TextChanged(object sender, EventArgs e)
         {
 
         }

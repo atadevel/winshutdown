@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
+            txthour = new TextBox();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
             label2 = new Label();
-            textBox2 = new TextBox();
+            txtmin = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -47,13 +47,13 @@
             label1.Text = "Hours";
             label1.Click += label1_Click;
             // 
-            // textBox1
+            // txthour
             // 
-            textBox1.Location = new Point(26, 67);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 1;
-            textBox1.TextChanged += textBox1_TextChanged;
+            txthour.Location = new Point(26, 67);
+            txthour.Name = "txthour";
+            txthour.Size = new Size(125, 27);
+            txthour.TabIndex = 1;
+            txthour.Leave += txthour_Leave;
             // 
             // button1
             // 
@@ -95,13 +95,13 @@
             label2.Text = "Minutes";
             label2.Click += label2_Click;
             // 
-            // textBox2
+            // txtmin
             // 
-            textBox2.Location = new Point(157, 67);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 1;
-            textBox2.TextChanged += textBox2_TextChanged;
+            txtmin.Location = new Point(157, 67);
+            txtmin.Name = "txtmin";
+            txtmin.Size = new Size(125, 27);
+            txtmin.TabIndex = 1;
+            txtmin.Leave += txtmin_Leave;
             // 
             // Form1
             // 
@@ -111,8 +111,8 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtmin);
+            Controls.Add(txthour);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form1";
@@ -125,11 +125,11 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txthour;
         private Button button1;
         private Button button2;
         private Button button3;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox txtmin;
     }
 }
