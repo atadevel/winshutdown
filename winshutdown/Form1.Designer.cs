@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             txthour = new TextBox();
             button1 = new Button();
@@ -36,6 +37,9 @@
             label2 = new Label();
             txtmin = new TextBox();
             button4 = new Button();
+            timer1 = new System.Windows.Forms.Timer(components);
+            label3 = new Label();
+            label4 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -113,11 +117,37 @@
             button4.Text = "Restart NOW";
             button4.UseVisualStyleBackColor = true;
             // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(439, 234);
+            label3.Name = "label3";
+            label3.Size = new Size(205, 20);
+            label3.TabIndex = 5;
+            label3.Text = "Time Remaining to Shutdown";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(452, 274);
+            label4.Name = "label4";
+            label4.Size = new Size(50, 20);
+            label4.TabIndex = 6;
+            label4.Text = "label4";
+            label4.Click += label4_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label4);
+            Controls.Add(label3);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -143,5 +173,8 @@
         private Label label2;
         private TextBox txtmin;
         private Button button4;
+        private System.Windows.Forms.Timer timer1;
+        private Label label3;
+        private Label label4;
     }
 }
