@@ -39,21 +39,29 @@ namespace winshutdown
 
         private void txthour_Leave(object sender, EventArgs e)
         {
-            string hour = txthour.Text;
-            Convert.ToInt32(hour);
-            MessageBox.Show(hour);
+            if (string.IsNullOrEmpty(txthour.Text))
+            {
+
+            }
+            else
+            {
+                string hour = txthour.Text;
+                Convert.ToInt32(hour);
+                MessageBox.Show(hour);
+            }
         }
         private void txtmin_Leave(object sender, EventArgs e)
         {
-            
-              
-            
-            
+            if(string.IsNullOrEmpty(txtmin.Text))
+            {
+                
+            }
+            else
+            {
                 string min = txtmin.Text;
                 Convert.ToInt32(min);
                 MessageBox.Show(min);
-
-            
+            }
             
         }
 

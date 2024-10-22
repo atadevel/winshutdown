@@ -35,6 +35,7 @@
             button3 = new Button();
             label2 = new Label();
             txtmin = new TextBox();
+            button4 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -103,11 +104,21 @@
             txtmin.TabIndex = 1;
             txtmin.Leave += txtmin_Leave;
             // 
+            // button4
+            // 
+            button4.Location = new Point(439, 137);
+            button4.Name = "button4";
+            button4.Size = new Size(132, 29);
+            button4.TabIndex = 4;
+            button4.Text = "Restart NOW";
+            button4.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -131,5 +142,6 @@
         private Button button3;
         private Label label2;
         private TextBox txtmin;
+        private Button button4;
     }
 }
