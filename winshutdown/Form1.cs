@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 
 namespace winshutdown
 {
@@ -9,14 +10,24 @@ namespace winshutdown
             InitializeComponent();
         }
 
+        int hour;
+        int min;
+        private int timeleft =  ;
+        public void StartCountdown()
+        {
+            timeleft = Convert.ToInt32(txthour.Text) * 60 * 60 + Convert.ToInt32(txtmin.Text) * 60;
+            label4.Text = timeleft.ToString();
+            countdowntimer.Start();
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            int timer = Convert.ToInt32(txthour.Text) * 60 + Convert.ToInt32(txtmin.Text);
-            timer1.Start();
+            
+            Process.Start("shutdown", $"/s /t 0");
 
         }
         private void button2_Click(object sender, EventArgs e)
@@ -39,7 +50,7 @@ namespace winshutdown
 
         }
 
-        private void txthour_Leave(object sender, EventArgs e)
+        public void txthour_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txthour.Text))
             {
@@ -47,12 +58,15 @@ namespace winshutdown
             }
             else
             {
-                string hour = txthour.Text;
-                Convert.ToInt32(hour);
+                string hourtext = txthour.Text;
+                Convert.ToInt32(hourtext);
+                int.TryParse(hourtext, out hour);
+
+
 
             }
         }
-        private void txtmin_Leave(object sender, EventArgs e)
+        public void txtmin_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtmin.Text))
             {
@@ -60,8 +74,20 @@ namespace winshutdown
             }
             else
             {
-                string min = txtmin.Text;
-                Convert.ToInt32(min);
+                string mintext = txtmin.Text;
+                Convert.ToInt32(mintext);
+                if (int.TryParse(mintext, out min))
+                {
+
+                }
+                else
+                {
+
+                }
+            }
+               
+
+                
 
             }
 
@@ -76,24 +102,32 @@ namespace winshutdown
         {
 
         }
-
-        private void timer1_Tick(object sender, EventArgs e)
+        
+        public void countdowntimer_Tick(object sender, EventArgs e)
         {
-            int timeleft = Convert.ToInt32(txthour.Text) * 60 * 60 + Convert.ToInt32(txtmin.Text) * 60;
+
+            label4.Text = timeleft.ToString();
             if (timeleft > 0)
-                timeleft = timeleft - 1;
+            {
+                timeleft--;
+            }
             else
-                //Process.Start("shutdown", $"/s /t 0");
-                MessageBox.Show("nigga");
-            
+            {
+                button1_Click(this, EventArgs.Empty);
+            }
 
-            label4.Text=timeleft.ToString();
-
+        
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            countdowntimer.Start();
+            label4.Text = timeleft.ToString();
         }
     }
 }

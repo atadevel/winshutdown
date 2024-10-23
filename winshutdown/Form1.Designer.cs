@@ -37,9 +37,10 @@
             label2 = new Label();
             txtmin = new TextBox();
             button4 = new Button();
-            timer1 = new System.Windows.Forms.Timer(components);
+            countdowntimer = new System.Windows.Forms.Timer(components);
             label3 = new Label();
             label4 = new Label();
+            button5 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -117,10 +118,10 @@
             button4.Text = "Restart NOW";
             button4.UseVisualStyleBackColor = true;
             // 
-            // timer1
+            // countdowntimer
             // 
-            timer1.Interval = 1000;
-            timer1.Tick += timer1_Tick;
+            countdowntimer.Interval = 1000;
+            countdowntimer.Tick += countdowntimer_Tick;
             // 
             // label3
             // 
@@ -141,11 +142,22 @@
             label4.Text = "label4";
             label4.Click += label4_Click;
             // 
+            // button5
+            // 
+            button5.Location = new Point(439, 172);
+            button5.Name = "button5";
+            button5.Size = new Size(132, 29);
+            button5.TabIndex = 7;
+            button5.Text = "Start";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(button4);
@@ -173,8 +185,9 @@
         private Label label2;
         private TextBox txtmin;
         private Button button4;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer countdowntimer;
         private Label label3;
         private Label label4;
+        private Button button5;
     }
 }
