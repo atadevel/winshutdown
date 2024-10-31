@@ -34,7 +34,7 @@ namespace winshutdown
                 button1_Click(this, EventArgs.Empty);
             }
         }
-        
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -52,6 +52,12 @@ namespace winshutdown
 
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            countdowntimer.Stop();
+            timeleft = 0;
+            label4.Text = timeleft.ToString();
+        }
         private void button6_Click(object sender, EventArgs e)
         {
             StartCountdown();
@@ -59,17 +65,17 @@ namespace winshutdown
 
         public void txthour_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txthour.Text))
+            if (string.IsNullOrEmpty(txthour.Text) == true)
             {
-
+                return;
             }
             else
             {
                 string hourtext = txthour.Text;
                 Convert.ToInt32(hourtext);
-                if(int.TryParse(hourtext, out hour))
+                if (int.TryParse(hourtext, out hour))
                 {
-                    hour = 0;
+
                 }
                 else
                 {
@@ -103,9 +109,6 @@ namespace winshutdown
         }
 
         
-
-
-
     }
 
 }

@@ -39,6 +39,7 @@
             label3 = new Label();
             label4 = new Label();
             button6 = new Button();
+            button4 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -49,7 +50,6 @@
             label1.Size = new Size(48, 20);
             label1.TabIndex = 0;
             label1.Text = "Hours";
-            //label1.Click += label1_Click;
             // 
             // txthour
             // 
@@ -87,7 +87,6 @@
             label2.Size = new Size(61, 20);
             label2.TabIndex = 0;
             label2.Text = "Minutes";
-           //label2.Click += label2_Click;
             // 
             // txtmin
             // 
@@ -122,19 +121,30 @@
             // 
             // button6
             // 
-            button6.Location = new Point(242, 278);
+            button6.Location = new Point(154, 274);
             button6.Name = "button6";
             button6.Size = new Size(94, 29);
             button6.TabIndex = 8;
-            button6.Text = "StartCount";
+            button6.Text = "Start Count";
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(254, 274);
+            button4.Name = "button4";
+            button4.Size = new Size(94, 29);
+            button4.TabIndex = 10;
+            button4.Text = "Stop Count";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button4);
             Controls.Add(button6);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -163,5 +173,6 @@
         private Label label3;
         private Label label4;
         private Button button6;
+        private Button button4;
     }
 }
