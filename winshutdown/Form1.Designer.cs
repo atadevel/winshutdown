@@ -33,14 +33,12 @@
             txthour = new TextBox();
             button1 = new Button();
             button2 = new Button();
-            button3 = new Button();
             label2 = new Label();
             txtmin = new TextBox();
-            button4 = new Button();
             countdowntimer = new System.Windows.Forms.Timer(components);
             label3 = new Label();
             label4 = new Label();
-            button5 = new Button();
+            button6 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -51,7 +49,7 @@
             label1.Size = new Size(48, 20);
             label1.TabIndex = 0;
             label1.Text = "Hours";
-            label1.Click += label1_Click;
+            //label1.Click += label1_Click;
             // 
             // txthour
             // 
@@ -81,16 +79,6 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // button3
-            // 
-            button3.Location = new Point(439, 102);
-            button3.Name = "button3";
-            button3.Size = new Size(132, 29);
-            button3.TabIndex = 3;
-            button3.Text = "Shutdown NOW";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -99,7 +87,7 @@
             label2.Size = new Size(61, 20);
             label2.TabIndex = 0;
             label2.Text = "Minutes";
-            label2.Click += label2_Click;
+           //label2.Click += label2_Click;
             // 
             // txtmin
             // 
@@ -108,15 +96,6 @@
             txtmin.Size = new Size(125, 27);
             txtmin.TabIndex = 1;
             txtmin.Leave += txtmin_Leave;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(439, 137);
-            button4.Name = "button4";
-            button4.Size = new Size(132, 29);
-            button4.TabIndex = 4;
-            button4.Text = "Restart NOW";
-            button4.UseVisualStyleBackColor = true;
             // 
             // countdowntimer
             // 
@@ -140,28 +119,25 @@
             label4.Size = new Size(50, 20);
             label4.TabIndex = 6;
             label4.Text = "label4";
-            label4.Click += label4_Click;
             // 
-            // button5
+            // button6
             // 
-            button5.Location = new Point(439, 172);
-            button5.Name = "button5";
-            button5.Size = new Size(132, 29);
-            button5.TabIndex = 7;
-            button5.Text = "Start";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            button6.Location = new Point(242, 278);
+            button6.Name = "button6";
+            button6.Size = new Size(94, 29);
+            button6.TabIndex = 8;
+            button6.Text = "StartCount";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button5);
+            Controls.Add(button6);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(button4);
-            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(txtmin);
@@ -181,13 +157,11 @@
         private TextBox txthour;
         private Button button1;
         private Button button2;
-        private Button button3;
         private Label label2;
         private TextBox txtmin;
-        private Button button4;
         private System.Windows.Forms.Timer countdowntimer;
         private Label label3;
         private Label label4;
-        private Button button5;
+        private Button button6;
     }
 }
