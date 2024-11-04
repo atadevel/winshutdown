@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
+using System.Linq;
 
 namespace winshutdown
 {
@@ -10,16 +11,16 @@ namespace winshutdown
             InitializeComponent();
         }
 
-        int hour;
-        int min;
+        int hour = 0;
+        int min = 0;
         private int timeleft;
         public void StartCountdown()
         {
-            if (int.TryParse(txthour.Text, out hour) && int.TryParse(txtmin.Text, out min))
-            {
-                timeleft = hour * 60 * 60 + min * 60;
+            txthour_Leave(this, EventArgs.Empty); 
+            txtmin_Leave(this, EventArgs.Empty);
+            timeleft = hour * 3600 + min * 60;
                 countdowntimer.Start();
-            }
+            
         }
         public void countdowntimer_Tick(object sender, EventArgs e)
         {
@@ -31,10 +32,26 @@ namespace winshutdown
             }
             else
             {
-                button1_Click(this, EventArgs.Empty);
+
             }
         }
 
+       /* private void operation(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            if (button == button1)
+            {
+                StartCountdown();
+
+                Process.Start("shutdown", $"/s /t 0");
+
+
+            }
+            if (button == button2)
+            {
+
+            }
+        }*/
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -65,42 +82,24 @@ namespace winshutdown
 
         public void txthour_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txthour.Text) == true)
+            if (string.IsNullOrEmpty(txthour.Text))
             {
-                return;
+                hour = 0;
             }
             else
             {
-                string hourtext = txthour.Text;
-                Convert.ToInt32(hourtext);
-                if (int.TryParse(hourtext, out hour))
-                {
-
-                }
-                else
-                {
-
-                }
+                int.TryParse(txthour.Text,out hour);
             }
         }
         public void txtmin_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtmin.Text))
             {
-
+                min = 0;
             }
             else
             {
-                string mintext = txtmin.Text;
-                Convert.ToInt32(mintext);
-                if (int.TryParse(mintext, out min))
-                {
-
-                }
-                else
-                {
-
-                }
+                int.TryParse(txtmin.Text,out min);
             }
 
 

@@ -104,20 +104,20 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(439, 234);
+            label3.Location = new Point(412, 278);
             label3.Name = "label3";
-            label3.Size = new Size(205, 20);
+            label3.Size = new Size(179, 20);
             label3.TabIndex = 5;
-            label3.Text = "Time Remaining to Shutdown";
+            label3.Text = "Seconds left to shutdown:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(452, 274);
+            label4.Location = new Point(606, 278);
             label4.Name = "label4";
-            label4.Size = new Size(50, 20);
+            label4.Size = new Size(49, 20);
             label4.TabIndex = 6;
-            label4.Text = "label4";
+            label4.Text = "00000";
             // 
             // button6
             // 
