@@ -13,7 +13,19 @@ namespace winshutdown
 
         int hour = 0;
         int min = 0;
-        private int timeleft;
+        private int timeleft; 
+        private void operation(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            if (button == button1)
+            {
+                Process.Start("shutdown", "/s /t 0");
+            }
+            if (button == button2)
+            {
+                Process.Start("shutdown", "/r /t 0");
+            }
+        }
         public void StartCountdown()
         {
             txthour_Leave(this, EventArgs.Empty); 
@@ -24,7 +36,6 @@ namespace winshutdown
         }
         public void countdowntimer_Tick(object sender, EventArgs e)
         {
-
             if (timeleft > 0)
             {
                 label4.Text = timeleft.ToString();
@@ -32,10 +43,11 @@ namespace winshutdown
             }
             else
             {
-
+                operation(this,EventArgs.Empty);
             }
         }
 
+       
        
 
         private void Form1_Load(object sender, EventArgs e)
@@ -45,18 +57,13 @@ namespace winshutdown
         private void button1_Click(object sender, EventArgs e)
         {
             StartCountdown();
-            if (timeleft <= 0)
-            {
-                Process.Start("shutdown", "/s /t 0");
-            }
+            
         }
         private void button2_Click(object sender, EventArgs e)
         {
             StartCountdown();
-            if (timeleft <= 0)
-            {
-                Process.Start("shutdown", "/r /t 0");
-            }
+            
+           
         }
 
         private void button4_Click(object sender, EventArgs e)
