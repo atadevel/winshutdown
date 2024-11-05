@@ -105,7 +105,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(412, 278);
+            label3.Location = new Point(439, 158);
             label3.Name = "label3";
             label3.Size = new Size(179, 20);
             label3.TabIndex = 5;
@@ -114,7 +114,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(606, 278);
+            label4.Location = new Point(640, 158);
             label4.Name = "label4";
             label4.Size = new Size(49, 20);
             label4.TabIndex = 6;
@@ -122,7 +122,7 @@
             // 
             // button6
             // 
-            button6.Location = new Point(154, 274);
+            button6.Location = new Point(12, 409);
             button6.Name = "button6";
             button6.Size = new Size(94, 29);
             button6.TabIndex = 8;
@@ -132,7 +132,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(254, 274);
+            button4.Location = new Point(112, 409);
             button4.Name = "button4";
             button4.Size = new Size(94, 29);
             button4.TabIndex = 10;
@@ -142,7 +142,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(208, 326);
+            button3.Location = new Point(212, 409);
             button3.Name = "button3";
             button3.Size = new Size(94, 29);
             button3.TabIndex = 11;
