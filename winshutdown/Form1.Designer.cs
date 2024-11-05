@@ -167,7 +167,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Timed Shutdown";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();

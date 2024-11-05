@@ -7,31 +7,28 @@ namespace winshutdown
     public partial class Form1 : Form
     {
         public Form1()
-        {
+        { 
             InitializeComponent();
+
         }
         int hour = 0;
         int min = 0;
         private int timeleft;
-        private void operation(string buttonIdentifier)
+        private string clickedbutton = "";
+        private void operation(string buttonclicked)
         {
-            button1_Click(this,EventArgs.Empty);
-            button2_Click(this,EventArgs.Empty);
-            StartCountdown();
-            if (buttonIdentifier ==$"{button1}")
+            if (timeleft < 1) 
             {
-                if(timeleft == 0)
+                clickedbutton = buttonclicked;
+            
+                if (buttonclicked == "button1")
                 {
-                   Process.Start("shutdown", "/s /t 0");
+                Process.Start("shutdown", "/s /t 0");
                 }
-            }
-            else if (buttonIdentifier == $"{button2}")
-            {
-                if(timeleft < 1)
+                else if (buttonclicked == "button2")
                 {
-                    Process.Start("shutdown", "/r /t 0");
+                Process.Start("shutdown", "/r /t 0");
                 }
-                
             }
         }
         public void StartCountdown()
@@ -51,7 +48,7 @@ namespace winshutdown
             }
             else
             {
-                
+                operation(clickedbutton);
             }
         }
 
@@ -65,13 +62,12 @@ namespace winshutdown
         private void button1_Click(object sender, EventArgs e)
         {
             StartCountdown();
-            operation("button1");
+            clickedbutton = "button1";
         }
         private void button2_Click(object sender, EventArgs e)
         {
             StartCountdown();
-            operation("button2");
-
+            clickedbutton = "button2";
         }
 
         private void button4_Click(object sender, EventArgs e)
