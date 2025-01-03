@@ -3,7 +3,7 @@
 
 HOW TO USE?
 
-Enter how many hours/minutes you want the program to shutdown/reboot after, press either /Shutdown/ to turn your pc off when timer reaches 0 or /Restart/ to reboot your pc when the timer reaches 0  
+Enter how many hours/minutes you want the program to shutdown/reboot your computer after, press either /Shutdown/ to turn your pc off when timer reaches 0 or /Restart/ to reboot your pc when the timer reaches 0  
 
 
 
