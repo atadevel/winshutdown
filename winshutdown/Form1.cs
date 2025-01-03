@@ -7,7 +7,7 @@ namespace winshutdown
     public partial class Form1 : Form
     {
         public Form1()
-        { 
+        {
             InitializeComponent();
 
         }
@@ -17,17 +17,17 @@ namespace winshutdown
         private string clickedbutton = "";
         private void operation(string buttonclicked)
         {
-            if (timeleft < 1) 
+            if (timeleft < 1)
             {
                 clickedbutton = buttonclicked;
-            
+
                 if (buttonclicked == "button1")
                 {
-                Process.Start("shutdown", "/s /t 0");
+                    Process.Start("shutdown", "/s /t 0");
                 }
                 else if (buttonclicked == "button2")
                 {
-                Process.Start("shutdown", "/r /t 0");
+                    Process.Start("shutdown", "/r /t 0");
                 }
             }
         }
@@ -42,7 +42,7 @@ namespace winshutdown
         public void countdowntimer_Tick(object sender, EventArgs e)
         {
             if (timeleft > 0)
-            {                
+            {
                 timeleft--;
                 label4.Text = timeleft.ToString();
             }
@@ -83,7 +83,7 @@ namespace winshutdown
 
         public void txthour_Leave(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(txthour.Text))
+            if (string.IsNullOrEmpty(txthour.Text))
             {
                 hour = 0;
             }
@@ -94,7 +94,7 @@ namespace winshutdown
         }
         public void txtmin_Leave(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(txtmin.Text))
+            if (string.IsNullOrEmpty(txtmin.Text))
             {
                 min = 0;
             }
@@ -108,10 +108,6 @@ namespace winshutdown
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            timeleft = 10;
-        }
     }
 
 }
